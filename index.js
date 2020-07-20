@@ -31,14 +31,6 @@ const questions = [
         'Yes','No'
     ]
 },
-// {
-//     type: "checkbox",
-//     message: "Table of Contents",
-//     name: "toc",
-//     choices: [
-//         'Installation','Usage','Credits','License','Tests','Questions'
-//     ]
-// },
 {
     type: "input",
     message: "Installation",
@@ -77,11 +69,11 @@ function writeToFile(fileName, data) {
     let options = [installation, usage, credits, license, tests];
     if(toc === 'Yes'){
         fileData += "## Table of Contents\n";
-        for(let i = 0; i < options.length; i++){
-            if(options[i].length > 0){
-                fileData += `* [${titles[i]}](#${titles[i].toLowerCase()}) \n`;
+        titles.forEach((x,index) => {
+            if(options[index].length > 0){
+                fileData += `* [${x}](#${x.toLowerCase()}) \n`;
             }
-        }
+        })
     }
     fileData += '\n';
     for(let i = 0; i < options.length; i++){

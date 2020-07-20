@@ -1,16 +1,19 @@
-# Project One 
-This is a super cool project! 
+# Project Two 
+Hello world this is cool 
 
 ## Table of Contents
-* [Credits](#credits) 
+* [Installation](#installation) 
+* [Usage](#usage) 
 * [License](#license) 
 
-## Credits
-AM CHarts
+## Installation
+npm install
+
+## Usage
+free
 
 ## License
-BSD 3
+MIT
 
 ## Questions? Contact me:
 GitHub Username: jamesravelle
-Email: james.ravelle@gmail.com
