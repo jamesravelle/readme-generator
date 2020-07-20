@@ -1,22 +1,22 @@
 # Project Title 
- This is my project 
+This is a readme generator that I built 
 
 ## Table of Contents
 * [Installation](#installation) 
-* [Credits](#credits) 
-* [License](#license) 
+* [Usage](#usage) 
 * [Tests](#tests) 
+* [Questions](#questions) 
 
 
 ## Installation
 Install it 
 
-## Credits
-My friend tim 
-
-## License
-MIT 
+## Usage
+Use it 
 
 ## Tests
 Test it 
 
+## Questions
+jamesravelle
+james.ravell@gmail.com

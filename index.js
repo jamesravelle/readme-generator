@@ -5,6 +5,16 @@ const questions = [
 // Title, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 {
     type: "input",
+    message: "Username",
+    name: "username"
+},
+{
+    type: "input",
+    message: "Email",
+    name: "email"
+},
+{
+    type: "input",
     message: "Title",
     name: "title"
 },
@@ -48,29 +58,28 @@ const questions = [
     type: "input",
     message: "Tests",
     name: "tests"
-},
-{
-    type: "input",
-    message: "Questions",
-    name: "questions"
-},
+}
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-    let {title, description, toc, installation, usage, credits, license, tests, questions} = data;
+    let {username, email, title, description, toc, installation, usage, credits, license, tests} = data;
     let fileData = `# ${title} \n${description} \n\n`;
     if(toc.length > 0){
         fileData += "## Table of Contents\n";
         toc.forEach(x => fileData += `* [${x}](#${x.toLowerCase()}) \n`);
     }
-    fileData += '\n\n';
+    fileData += '\n';
     (toc.includes('Installation')) ? fileData += `## Installation\n${installation} \n\n` :  null;
     (toc.includes('Usage')) ? fileData += `## Usage\n${usage} \n\n` :  null;
     (toc.includes('Credits')) ? fileData += `## Credits\n${credits} \n\n` :  null;
     (toc.includes('License')) ? fileData += `## License\n${license} \n\n` :  null;
     (toc.includes('Tests')) ? fileData += `## Tests\n${tests} \n\n` :  null;
-    (toc.includes('Questions')) ? fileData += `## Questions\n${questions} \n\n` :  null;
+    if(username.length > 0 || email.length > 0){
+        fileData += "## Questions? Contact me:\n";
+        (username.length > 0) ? fileData += `GitHub Username: ${username}\n` : null;
+        (email.length > 0) ? fileData += `Email: ${email}\n` : null;
+    }
     // fileData += `## Installation\n${installation} \n\n`;
     // fileData += `## Usage\n${usage} \n\n`;
     // fileData += `## Credits\n${credits} \n\n`;
