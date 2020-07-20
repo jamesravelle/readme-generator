@@ -24,13 +24,21 @@ const questions = [
     name: "description"
 },
 {
-    type: "checkbox",
+    type: "list",
     message: "Table of Contents",
     name: "toc",
     choices: [
-        'Installation','Usage','Credits','License','Tests','Questions'
+        'Yes','No'
     ]
 },
+// {
+//     type: "checkbox",
+//     message: "Table of Contents",
+//     name: "toc",
+//     choices: [
+//         'Installation','Usage','Credits','License','Tests','Questions'
+//     ]
+// },
 {
     type: "input",
     message: "Installation",
@@ -65,27 +73,25 @@ const questions = [
 function writeToFile(fileName, data) {
     let {username, email, title, description, toc, installation, usage, credits, license, tests} = data;
     let fileData = `# ${title} \n${description} \n\n`;
-    if(toc.length > 0){
+    let titles = ['Installation','Usage','Credits','License','Tests'];
+    let options = [installation, usage, credits, license, tests];
+    if(toc === 'Yes'){
         fileData += "## Table of Contents\n";
-        toc.forEach(x => fileData += `* [${x}](#${x.toLowerCase()}) \n`);
+        for(let i = 0; i < options.length; i++){
+            if(options[i].length > 0){
+                fileData += `* [${titles[i]}](#${titles[i].toLowerCase()}) \n`;
+            }
+        }
     }
     fileData += '\n';
-    (toc.includes('Installation')) ? fileData += `## Installation\n${installation} \n\n` :  null;
-    (toc.includes('Usage')) ? fileData += `## Usage\n${usage} \n\n` :  null;
-    (toc.includes('Credits')) ? fileData += `## Credits\n${credits} \n\n` :  null;
-    (toc.includes('License')) ? fileData += `## License\n${license} \n\n` :  null;
-    (toc.includes('Tests')) ? fileData += `## Tests\n${tests} \n\n` :  null;
+    for(let i = 0; i < options.length; i++){
+        (options[i].length > 0) ? fileData += `## ${titles[i]}\n${options[i]}\n\n` : null;
+    }
     if(username.length > 0 || email.length > 0){
         fileData += "## Questions? Contact me:\n";
         (username.length > 0) ? fileData += `GitHub Username: ${username}\n` : null;
         (email.length > 0) ? fileData += `Email: ${email}\n` : null;
     }
-    // fileData += `## Installation\n${installation} \n\n`;
-    // fileData += `## Usage\n${usage} \n\n`;
-    // fileData += `## Credits\n${credits} \n\n`;
-    // fileData += `## License\n${license} \n\n`;
-    // fileData += `## Tests\n${tests} \n\n`;
-    // fileData += `## Questions\n${questions} \n\n`;
     fs.writeFile(fileName, fileData, function(err){
         console.log(fileData);
         if(err){

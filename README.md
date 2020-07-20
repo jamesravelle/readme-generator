@@ -1,22 +1,16 @@
-# Project Title 
-This is a readme generator that I built 
+# Project One 
+This is a super cool project! 
 
 ## Table of Contents
-* [Installation](#installation) 
-* [Usage](#usage) 
-* [Tests](#tests) 
-* [Questions](#questions) 
+* [Credits](#credits) 
+* [License](#license) 
 
+## Credits
+AM CHarts
 
-## Installation
-Install it 
+## License
+BSD 3
 
-## Usage
-Use it 
-
-## Tests
-Test it 
-
-## Questions
-jamesravelle
-james.ravell@gmail.com
+## Questions? Contact me:
+GitHub Username: jamesravelle
+Email: james.ravelle@gmail.com
