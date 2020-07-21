@@ -1,19 +1,15 @@
-# Project Two 
-Hello world this is cool 
+# Readme Generator 
+Simple node application that uses command line prompts to build a beautiful readme.md file 
 
 ## Table of Contents
-* [Installation](#installation) 
-* [Usage](#usage) 
-* [License](#license) 
+* [Credits](#credits) 
 
-## Installation
-npm install
+## Credits
+Inquirer, https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
 
-## Usage
-free
-
-## License
-MIT
+## Licenses
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Questions? Contact me:
 GitHub Username: jamesravelle
+Email: james.ravelle@gmail.com

@@ -15,7 +15,7 @@ const questions = [
 },
 {
     type: "input",
-    message: "Title",
+    message: "Project Title",
     name: "title"
 },
 {
@@ -65,8 +65,8 @@ const questions = [
 function writeToFile(fileName, data) {
     let {username, email, title, description, toc, installation, usage, credits, license, tests} = data;
     let fileData = `# ${title} \n${description} \n\n`;
-    let titles = ['Installation','Usage','Credits','License','Tests'];
-    let options = [installation, usage, credits, license, tests];
+    let titles = ['Installation','Usage','Credits','Tests'];
+    let options = [installation, usage, credits, tests];
     if(toc === 'Yes'){
         fileData += "## Table of Contents\n";
         titles.forEach((x,index) => {
@@ -79,6 +79,23 @@ function writeToFile(fileName, data) {
     for(let i = 0; i < options.length; i++){
         (options[i].length > 0) ? fileData += `## ${titles[i]}\n${options[i]}\n\n` : null;
     }
+    fileData += '## Licenses\n';
+    switch(license) {
+        case 'MIT':
+          fileData += '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n';
+          break;
+        case 'APACHE 2.0':
+          fileData += '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n\n';
+          break;
+        case 'GPL 3.0':
+          fileData += '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n\n';
+          break;
+        case 'BSD 3':
+          fileData += '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)\n\n';
+          break;
+        default:
+          // code block
+      }
     if(username.length > 0 || email.length > 0){
         fileData += "## Questions? Contact me:\n";
         (username.length > 0) ? fileData += `GitHub Username: ${username}\n` : null;
