@@ -79,7 +79,7 @@ function writeToFile(fileName, data) {
     for(let i = 0; i < options.length; i++){
         (options[i].length > 0) ? fileData += `## ${titles[i]}\n${options[i]}\n\n` : null;
     }
-    fileData += `## License\n${license}\n`;
+    fileData += `## License\n`;
     switch(license) {
         case 'MIT':
           fileData += '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n';
