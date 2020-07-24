@@ -1,5 +1,5 @@
 # Node Readme Generator 
-Simple node application that uses command line prompts to build a beautiful readme.md file  
+Simple node application that uses command line prompts to build a beautiful readme.md file 
 
 ## Table of Contents
 * [Installation](#installation) 
@@ -11,8 +11,7 @@ Simple node application that uses command line prompts to build a beautiful read
 Download to computer and run node index.js in your terminal
 
 ## Credits
-- Inquirer 
-- Shields: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+Inquirer, https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
 
 ## License
 MIT
