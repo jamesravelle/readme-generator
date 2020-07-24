@@ -65,8 +65,8 @@ const questions = [
 function writeToFile(fileName, data) {
     let {username, email, title, description, toc, installation, usage, credits, license, tests} = data;
     let fileData = `# ${title} \n${description} \n\n`;
-    let titles = ['Installation','Usage','Credits','Tests'];
-    let options = [installation, usage, credits, tests];
+    let titles = ['Installation','Usage','Credits', 'License', 'Tests'];
+    let options = [installation, usage, credits, license, tests];
     if(toc === 'Yes'){
         fileData += "## Table of Contents\n";
         titles.forEach((x,index) => {
@@ -74,6 +74,7 @@ function writeToFile(fileName, data) {
                 fileData += `* [${x}](#${x.toLowerCase()}) \n`;
             }
         })
+        fileData += '* [Questions](#questions) \n';
     }
     fileData += '\n';
     for(let i = 0; i < options.length; i++){
